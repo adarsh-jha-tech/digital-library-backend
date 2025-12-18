@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Generated / local notes
+digital-library-codebase.md
+notes.png

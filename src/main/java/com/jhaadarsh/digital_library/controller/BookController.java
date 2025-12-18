@@ -1,6 +1,6 @@
 package com.jhaadarsh.digital_library.controller;
 
-import com.jhaadarsh.digital_library.adapter.BookAdapter;
+import com.jhaadarsh.digital_library.common.CommonAdapter;
 import com.jhaadarsh.digital_library.entity.input.BookInputEntity;
 import com.jhaadarsh.digital_library.model.BookModel;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,12 +31,15 @@ import java.util.List;
 @RequestMapping("book")
 public class BookController {
 
-    private final BookAdapter bookAdapter;
+    private final CommonAdapter<BookInputEntity, BookModel, Long> bookAdapter;
+
 
     @Autowired
-    public BookController(BookAdapter bookAdapter) {
+    public BookController(
+            CommonAdapter<BookInputEntity, BookModel, Long> bookAdapter) {
         this.bookAdapter = bookAdapter;
     }
+
 
     /**
      * Fetch all books.
@@ -73,7 +76,7 @@ public class BookController {
     public ResponseEntity<BookModel> addBook(@RequestBody BookInputEntity book) {
         return ResponseEntity
                 .status(HttpStatus.CREATED)
-                .body(bookAdapter.save(book));
+                .body(bookAdapter.create(book));
     }
 
     /**
@@ -90,7 +93,7 @@ public class BookController {
             @PathVariable Long id,
             @RequestBody BookInputEntity book) {
 
-        BookModel updatedBook = bookAdapter.updateBook(id, book);
+        BookModel updatedBook = bookAdapter.update(id, book);
         return ResponseEntity.ok(updatedBook);
     }
 
@@ -104,7 +107,7 @@ public class BookController {
      */
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteBook(@PathVariable Long id) {
-        bookAdapter.deleteBook(id);
+        bookAdapter.delete(id);
         return ResponseEntity.ok("Deleted Book with id " + id + " successfully!");
     }
 }
