@@ -35,3 +35,7 @@ build/
 # Generated / local notes
 digital-library-codebase.md
 notes.png
+# Local code export / docs
+**/src/main/java/**/tools/
+
+
