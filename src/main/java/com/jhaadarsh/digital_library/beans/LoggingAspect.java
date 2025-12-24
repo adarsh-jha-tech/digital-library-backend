@@ -14,7 +14,7 @@ import java.util.Arrays;
 public class LoggingAspect {
 
     // This advice runs before every method execution in the given package structure
-    @Before("execution(* org.geeksforgeeks.gfg_spring_project..*(..))")
+    @Before("execution(* com.jhaadarsh.digital_library..*(..))")
     public void logMethodCall(JoinPoint joinPoint) {
         log.info("Logging: Calling {} with arguments: {}",
                 joinPoint.getSignature().getName(),

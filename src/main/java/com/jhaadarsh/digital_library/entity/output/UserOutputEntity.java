@@ -9,7 +9,7 @@ import java.time.Instant;
 
 @Entity
 @Data
-@Table(name = "UserEntity")
+@Table(name = "users")
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserOutputEntity {
@@ -28,7 +28,7 @@ public class UserOutputEntity {
     @Column(name = "email", nullable = false)
     private String email;
 
-    @Column(name = "phoneNumber")
+    @Column(name = "phone_number")
     private String phoneNumber;
 
     @Column(name = "date_of_birth", nullable = false)

@@ -10,8 +10,6 @@ import java.time.Instant;
 @Builder
 public class BookInputEntity {
 
-    private long id;
-
     @NotBlank(message = "Mandatory Field!")
     private String name;
     @NotBlank(message = "Mandatory Field!")
