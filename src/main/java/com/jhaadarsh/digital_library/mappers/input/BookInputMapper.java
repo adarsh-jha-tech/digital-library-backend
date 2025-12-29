@@ -11,7 +11,6 @@ public class BookInputMapper {
 
     public BookModel mapToModel(BookInputEntity bookInputEntity){
         return BookModel.builder()
-                .id(bookInputEntity.getId())
                 .name(bookInputEntity.getName())
                 .author(bookInputEntity.getAuthor())
                 .description(bookInputEntity.getDescription())

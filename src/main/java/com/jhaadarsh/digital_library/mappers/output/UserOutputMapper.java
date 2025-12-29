@@ -4,6 +4,8 @@ import com.jhaadarsh.digital_library.entity.output.UserOutputEntity;
 import com.jhaadarsh.digital_library.model.UserModel;
 import org.springframework.stereotype.Component;
 
+import java.time.Instant;
+
 @Component
 public class UserOutputMapper {
 
@@ -15,6 +17,8 @@ public class UserOutputMapper {
                 .email(entity.getEmail())
                 .phoneNumber(entity.getPhoneNumber())
                 .dob(entity.getDob())
+                .createdAt(entity.getCreatedAt())
+                .updatedAt(entity.getUpdatedAt())
                 .build();
     }
 

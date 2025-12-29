@@ -12,7 +12,7 @@ import java.time.Instant;
 @Table(name = "users")
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserOutputEntity {
+public class UserOutputEntity extends BaseAuditEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,6 +33,4 @@ public class UserOutputEntity {
 
     @Column(name = "date_of_birth", nullable = false)
     private Instant dob;
-
-
 }

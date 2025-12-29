@@ -30,6 +30,6 @@ public class UserRepository {
 
     public Optional<UserModel> findById(Long id) {
         return userJPARepository.findById(id)
-                .map(userOutputMapper::mapToModel);
+                .map(entity -> userOutputMapper.mapToModel(entity));
     }
 }

@@ -19,9 +19,7 @@ public class UserAdapter {
     }
 
     public UserModel create(UserInputEntity input) {
-        return userService.create(
-                userInputMapper.mapToModel(input)
-        );
+        return userService.create(userInputMapper.mapToModel(input));
     }
 
     public UserModel findById(Long id) {

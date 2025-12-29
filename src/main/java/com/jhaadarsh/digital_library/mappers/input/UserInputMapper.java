@@ -16,7 +16,6 @@ public class UserInputMapper {
                 .email(input.getEmail())
                 .phoneNumber(input.getPhoneNumber())
                 .dob(input.getDob())
-                .createdAt(Instant.now())
                 .build();
     }
 }
